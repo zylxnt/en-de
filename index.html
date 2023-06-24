@@ -26,7 +26,7 @@
   <body>
     <h1>Encode/Decode</h1>
     <p>Enter a word to encode or decode:</p>
-      <p2>Note: use underscore's for spaces</p2>
+      <p2>Note: spaces turn into underscores</p2>
     <input type="text" id="input">
     <button onclick="encode()">Encode</button>
     <button onclick="decode()">Decode</button>
@@ -39,7 +39,7 @@
         'a': 'k', 's': 'l', 'd': 'm', 'f': 'n', 'g': 'o',
         'h': 'p', 'j': 'q', 'k': 'r', 'l': 's', 'z': 't',
         'x': 'u', 'c': 'v', 'v': 'w', 'b': 'x', 'n': 'y',
-        'm': 'z', ' ': ' '
+        'm': 'z', ' ': '_'
       };
 
       function encode() {
