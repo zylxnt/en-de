@@ -3,6 +3,25 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encode/Decode</title>
+    <style>
+      body {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h1, p {
+        color: white;
+        text-align: center;
+      }
+
+      input, button {
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
     <h1>Encode/Decode</h1>
@@ -19,35 +38,8 @@
         'a': 'k', 's': 'l', 'd': 'm', 'f': 'n', 'g': 'o',
         'h': 'p', 'j': 'q', 'k': 'r', 'l': 's', 'z': 't',
         'x': 'u', 'c': 'v', 'v': 'w', 'b': 'x', 'n': 'y',
-        'm': 'z', ' ': '|'
-      };
-
-      function encode() {
-        let input = document.getElementById('input').value;
-        let encodedWord = '';
-        for (let i = 0; i < input.length; i++) {
-          let letter = input[i].toLowerCase();
-          encodedWord += codeSheet[letter] || letter;
-        }
-        document.getElementById('output').innerHTML = encodedWord;
-      }
-
-      function decode() {
-        let input = document.getElementById('input').value;
-        let decodedWord = '';
-        for (let i = 0; i < input.length; i++) {
-          let letter = input[i];
-          for (let key in codeSheet) {
-            if (letter === codeSheet[key]) {
-              decodedWord += key;
-              break;
-            } else if (key === ' ') {
-              decodedWord += letter;
-            }
-          }
-        }
-        document.getElementById('output').innerHTML = decodedWord;
-      }
-    </script>
-  </body>
-</html>
+        'm': 'z', 'Q': 'A', 'W': 'B', 'E': 'C', 'R': 'D',
+        'T': 'E', 'Y': 'F', 'U': 'G', 'I': 'H', 'O': 'I',
+        'P': 'J', 'A': 'K', 'S': 'L', 'D': 'M', 'F': 'N',
+        'G': 'O', 'H': 'P', 'J': 'Q', 'K': 'R', 'L': 'S',
+        'Z': 'T', 'X': 'U', 'C
