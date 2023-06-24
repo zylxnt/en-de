@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Encode/Decode</title>
+  </head>
+  <body>
+    <h1>Encode/Decode</h1>
+    <p>Enter a word to encode or decode:</p>
+    <input type="text" id="input">
+    <button onclick="encode()">Encode</button>
+    <button onclick="decode()">Decode</button>
+    <p id="output"></p>
+
+    <script>
+      let codeSheet = {
+        'q': 'a', 'w': 'b', 'e': 'c', 'r': 'd', 't': 'e',
+        'y': 'f', 'u': 'g', 'i': 'h', 'o': 'i', 'p': 'j',
+        'a': 'k', 's': 'l', 'd': 'm', 'f': 'n', 'g': 'o',
+        'h': 'p', 'j': 'q', 'k': 'r', 'l': 's', 'z': 't',
+        'x': 'u', 'c': 'v', 'v': 'w', 'b': 'x', 'n': 'y',
+        'm': 'z', ' ': '|'
+      };
+
+      function encode() {
+        let input = document.getElementById('input').value;
+        let encodedWord = '';
+        for (let i = 0; i < input.length; i++) {
+          let letter = input[i].toLowerCase();
+          encodedWord += codeSheet[letter] || letter;
+        }
+        document.getElementById('output').innerHTML = encodedWord;
+      }
+
+      function decode() {
+        let input = document.getElementById('input').value;
+        let decodedWord = '';
+        for (let i = 0; i < input.length; i++) {
+          let letter = input[i];
+          for (let key in codeSheet) {
+            if (letter === codeSheet[key]) {
+              decodedWord += key;
+              break;
+            } else if (key === ' ') {
+              decodedWord += letter;
+            }
+          }
+        }
+        document.getElementById('output').innerHTML = decodedWord;
+      }
+    </script>
+  </body>
+</html>
